@@ -1,9 +1,11 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "lib": ["es2017", "dom"],
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
     "jsx": "react",
-    "outDir": "./lib"
+    "lib": ["es2017", "dom"],
+    "outDir": "./lib",
+    "target": "es5"
   },
   "exclude": ["node_modules"],
   "include": [
