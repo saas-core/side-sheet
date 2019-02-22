@@ -1,0 +1,64 @@
+{
+  "name": "@saascore/side-sheet",
+  "version": "0.0.0",
+  "description": "React components and hooks to help implement side sheets (panels/flyouts)",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "jest --env=jsdom --verbose=false",
+    "test:watch": "yarn test --watch",
+    "prepare": "rimraf ./lib && tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saas-core/side-sheet.git"
+  },
+  "keywords": [
+    "React",
+    "hooks",
+    "side sheet",
+    "flyout",
+    "panel"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/saas-core/side-sheet/issues"
+  },
+  "homepage": "https://github.com/saas-core/side-sheet#readme",
+  "devDependencies": {
+    "@types/jest": "^24.0.6",
+    "@types/react": "^16.8.4",
+    "jest": "^24.1.0",
+    "jest-dom": "^3.1.2",
+    "react": "^16.8.3",
+    "react-dom": "^16.8.3",
+    "react-testing-library": "^5.9.0",
+    "rimraf": "^2.6.3",
+    "ts-jest": "^24.0.0",
+    "typescript": "^3.3.3333"
+  },
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testMatch": [
+      "<rootDir>/__tests__/*.test.(ts|js)?(x)"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "json"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,ts,tsx}"
+    ]
+  }
+}
