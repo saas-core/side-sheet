@@ -2,6 +2,7 @@ import React from 'react';
 import { css } from 'emotion';
 import { animated, AnimatedValue } from 'react-spring';
 import useSideSheetContext from '../hooks/useSideSheetContext';
+import useTabTrap from '../hooks/useTabTrap';
 
 const baseClass = css`
   transform: none !important; // react-spring may try to set transform style which we don't need
@@ -21,10 +22,13 @@ const baseClass = css`
 export type ScrimProps = {
   children: React.ReactNode;
   style?: AnimatedValue<any>,
+  sideSheetRef?: HTMLElement;
 };
 
-export default function Scrim({ children, style }: ScrimProps) {
+export default function Scrim({ children, style, sideSheetRef }: ScrimProps) {
   const { close } = useSideSheetContext();
+
+  useTabTrap(sideSheetRef, close);
 
   return (
     <animated.div className={baseClass} style={style} onClick={close}>

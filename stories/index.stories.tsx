@@ -56,6 +56,9 @@ function TestSheet2() {
       <p className={css({ flexGrow: 1 })}>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita id illum ipsa ipsum iste itaque iusto molestiae molestias nihil quasi quis repellat saepe sequi similique tempore temporibus, unde velit voluptates.
       </p>
+      <p>
+        <button>do nothing</button>
+      </p>
     </div>
   );
 }

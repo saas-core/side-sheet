@@ -32,19 +32,21 @@ export type SideSheetProps = {
 };
 
 export default function SideSheet({ isOpen, onCloseComplete, children }: SideSheetProps) {
+  const tabTrapRef = React.useRef<HTMLDivElement>(null);
+
   const renderSheet = React.useCallback(
     ({ item: shouldDisplaySheet, key, props }: UseTransitionResult<boolean, any>) => {
       return shouldDisplaySheet && (
         <div className={containerClass} key={key}>
-          <Scrim style={props}>
-            <animated.div className={baseClass} style={props}>
+          <Scrim style={props} sideSheetRef={tabTrapRef.current}>
+            <animated.div className={baseClass} style={props} onClick={stopPropagation} ref={tabTrapRef}>
               {children}
             </animated.div>
           </Scrim>
         </div>
       );
     },
-    [children],
+    [children, tabTrapRef],
   );
 
   const transitions = useTransition(isOpen, null, transitionConfig);
@@ -54,4 +56,10 @@ export default function SideSheet({ isOpen, onCloseComplete, children }: SideShe
       {transitions.map(renderSheet)}
     </SideSheetProvider>
   );
+}
+
+/* HELPERS */
+
+function stopPropagation(e: React.MouseEvent<HTMLElement>) {
+  e.stopPropagation();
 }
