@@ -1,6 +1,6 @@
 {
   "name": "@saascore/side-sheet",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "React components and hooks to help implement side sheets (panels/flyouts)",
   "main": "lib/index.js",
   "module": "lib/index.es.js",
