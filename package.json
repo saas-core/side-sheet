@@ -13,7 +13,7 @@
     "watch": "rollup -cw",
     "test": "jest --env=jsdom --verbose=false",
     "test:watch": "yarn test --watch",
-    "prepare": "rimraf ./lib",
+    "prerelease": "rimraf ./lib",
     "tag-release": "standard-version",
     "release": "./release.sh",
     "storybook": "start-storybook -p 6006",

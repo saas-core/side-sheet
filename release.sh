@@ -4,7 +4,7 @@
 set -e
 
 # Clean lib folder
-npm run prepare
+npm run prerelease
 
 # Compile the project
 npm run build
