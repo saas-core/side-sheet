@@ -1,9 +1,12 @@
 {
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
+    "declaration": true,
+    "declarationDir": "./lib",
     "esModuleInterop": true,
     "jsx": "react",
     "lib": ["es2017", "dom"],
+    "module": "es6",
     "outDir": "./lib",
     "target": "es5"
   },

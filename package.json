@@ -3,10 +3,17 @@
   "version": "0.0.0",
   "description": "React components and hooks to help implement side sheets (panels/flyouts)",
   "main": "lib/index.js",
+  "module": "lib/index.es.js",
+  "files": [
+    "lib"
+  ],
+  "types": "lib/index.d.ts",
   "scripts": {
+    "build": "rollup -c",
+    "watch": "rollup -cw",
     "test": "jest --env=jsdom --verbose=false",
     "test:watch": "yarn test --watch",
-    "prepare": "rimraf ./lib && tsc",
+    "prepare": "rimraf ./lib",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
@@ -42,10 +49,12 @@
     "babel-loader": "^8.0.5",
     "jest": "^24.1.0",
     "jest-dom": "^3.1.2",
-    "react": "^16.8.3",
-    "react-dom": "^16.8.3",
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4",
     "react-testing-library": "^5.9.0",
     "rimraf": "^2.6.3",
+    "rollup": "^1.6.0",
+    "rollup-plugin-typescript2": "^0.20.1",
     "ts-jest": "^24.0.0",
     "typescript": "^3.3.3333"
   },
@@ -53,9 +62,6 @@
     "lib": "lib",
     "test": "__tests__"
   },
-  "files": [
-    "lib"
-  ],
   "jest": {
     "transform": {
       "^.+\\.tsx?$": "ts-jest"
@@ -76,5 +82,9 @@
   "dependencies": {
     "emotion": "^10.0.7",
     "react-spring": "^8.0.7"
+  },
+  "peerDependencies": {
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4"
   }
 }
